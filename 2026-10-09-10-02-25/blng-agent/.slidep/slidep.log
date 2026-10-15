@@ -1,0 +1,186 @@
+=== boot pid=9344 ts=2026-10-14 10:27:56.526 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js create C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx ===
+[2026-10-14 10:27:56.525] [INFO ] [pid=9344] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+=== boot pid=2868 ts=2026-10-14 10:28:02.968 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx --dsl-file C:\Users\Administrator\AppData\Local\Temp\ppt_test\slides\001.slide ===
+[2026-10-14 10:28:02.967] [INFO ] [pid=2868] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:28:03.011] [INFO ] [pid=2868] [slide-version] fileId=1CF85274 version=0 filePath=C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx
+=== boot pid=3936 ts=2026-10-14 10:28:10.267 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx --dsl-file C:\Users\Administrator\AppData\Local\Temp\ppt_test\slides\002.slide ===
+[2026-10-14 10:28:10.266] [INFO ] [pid=3936] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:28:10.314] [INFO ] [pid=3936] [slide-version] fileId=1CF85274 version=1 filePath=C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx
+=== boot pid=792 ts=2026-10-14 10:28:16.914 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx --dsl-file C:\Users\Administrator\AppData\Local\Temp\ppt_test\slides\003.slide ===
+[2026-10-14 10:28:16.912] [INFO ] [pid=792] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:28:16.956] [INFO ] [pid=792] [slide-version] fileId=1CF85274 version=2 filePath=C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx
+=== boot pid=1916 ts=2026-10-14 10:28:23.726 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx --dsl-file C:\Users\Administrator\AppData\Local\Temp\ppt_test\slides\004.slide ===
+[2026-10-14 10:28:23.725] [INFO ] [pid=1916] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:28:23.769] [INFO ] [pid=1916] [slide-version] fileId=1CF85274 version=3 filePath=C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx
+=== boot pid=18172 ts=2026-10-14 10:28:30.405 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx --dsl-file C:\Users\Administrator\AppData\Local\Temp\ppt_test\slides\005.slide ===
+[2026-10-14 10:28:30.404] [INFO ] [pid=18172] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:28:30.448] [INFO ] [pid=18172] [slide-version] fileId=1CF85274 version=4 filePath=C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx
+=== boot pid=7292 ts=2026-10-14 10:28:37.228 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx --dsl-file C:\Users\Administrator\AppData\Local\Temp\ppt_test\slides\006.slide ===
+[2026-10-14 10:28:37.226] [INFO ] [pid=7292] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:28:37.271] [INFO ] [pid=7292] [slide-version] fileId=1CF85274 version=5 filePath=C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx
+=== boot pid=19228 ts=2026-10-14 10:28:44.079 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx --dsl-file C:\Users\Administrator\AppData\Local\Temp\ppt_test\slides\007.slide ===
+[2026-10-14 10:28:44.078] [INFO ] [pid=19228] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:28:44.123] [INFO ] [pid=19228] [slide-version] fileId=1CF85274 version=6 filePath=C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx
+=== boot pid=912 ts=2026-10-14 10:28:51.302 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx --dsl-file C:\Users\Administrator\AppData\Local\Temp\ppt_test\slides\008.slide ===
+[2026-10-14 10:28:51.301] [INFO ] [pid=912] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:28:51.345] [INFO ] [pid=912] [slide-version] fileId=1CF85274 version=7 filePath=C:\Users\Administrator\AppData\Local\Temp\ppt_test\测试集.pptx
+=== boot pid=16312 ts=2026-10-14 10:37:28.983 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js create "D:\Desktop\新建文件夹 (2)\设计图.pptx" ===
+[2026-10-14 10:37:28.983] [INFO ] [pid=16312] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+=== boot pid=14900 ts=2026-10-14 10:37:34.721 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\001.slide" ===
+[2026-10-14 10:37:34.720] [INFO ] [pid=14900] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:37:34.763] [INFO ] [pid=14900] [slide-version] fileId=E407BFE8 version=0 filePath=D:\Desktop\新建文件夹 (2)\设计图.pptx
+=== boot pid=14848 ts=2026-10-14 10:37:40.862 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\002.slide" ===
+[2026-10-14 10:37:40.861] [INFO ] [pid=14848] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 10:37:40.903] [INFO ] [pid=14848] [slide-version] fileId=E407BFE8 version=1 filePath=D:\Desktop\新建文件夹 (2)\设计图.pptx
+=== boot pid=17000 ts=2026-10-14 12:19:31.443 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js create "D:\Desktop\新建文件夹 (2)\设计图集.pptx" ===
+[2026-10-14 12:19:31.443] [INFO ] [pid=17000] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+=== boot pid=7952 ts=2026-10-14 12:19:38.064 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\001.slide" ===
+[2026-10-14 12:19:38.063] [INFO ] [pid=7952] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:19:38.109] [INFO ] [pid=7952] [slide-version] fileId=ADB8F6C5 version=0 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=2596 ts=2026-10-14 12:19:44.796 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\002.slide" ===
+[2026-10-14 12:19:44.795] [INFO ] [pid=2596] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:19:44.841] [INFO ] [pid=2596] [slide-version] fileId=ADB8F6C5 version=1 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=4172 ts=2026-10-14 12:19:51.686 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\003.slide" ===
+[2026-10-14 12:19:51.684] [INFO ] [pid=4172] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:19:51.729] [INFO ] [pid=4172] [slide-version] fileId=ADB8F6C5 version=2 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=13972 ts=2026-10-14 12:19:58.652 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\004.slide" ===
+[2026-10-14 12:19:58.650] [INFO ] [pid=13972] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:19:58.701] [INFO ] [pid=13972] [slide-version] fileId=ADB8F6C5 version=3 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=7156 ts=2026-10-14 12:20:05.600 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\005.slide" ===
+[2026-10-14 12:20:05.599] [INFO ] [pid=7156] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:20:05.643] [INFO ] [pid=7156] [slide-version] fileId=ADB8F6C5 version=4 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=17416 ts=2026-10-14 12:20:12.568 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\006.slide" ===
+[2026-10-14 12:20:12.567] [INFO ] [pid=17416] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:20:12.612] [INFO ] [pid=17416] [slide-version] fileId=ADB8F6C5 version=5 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=17384 ts=2026-10-14 12:20:19.278 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\007.slide" ===
+[2026-10-14 12:20:19.273] [INFO ] [pid=17384] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:20:19.323] [INFO ] [pid=17384] [slide-version] fileId=ADB8F6C5 version=6 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=16128 ts=2026-10-14 12:20:26.402 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\008.slide" ===
+[2026-10-14 12:20:26.400] [INFO ] [pid=16128] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:20:26.446] [INFO ] [pid=16128] [slide-version] fileId=ADB8F6C5 version=7 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18664 ts=2026-10-14 12:20:33.424 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\009.slide" ===
+[2026-10-14 12:20:33.422] [INFO ] [pid=18664] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:20:33.467] [INFO ] [pid=18664] [slide-version] fileId=ADB8F6C5 version=8 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=10448 ts=2026-10-14 12:20:40.568 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\010.slide" ===
+[2026-10-14 12:20:40.567] [INFO ] [pid=10448] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:20:40.612] [INFO ] [pid=10448] [slide-version] fileId=ADB8F6C5 version=9 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=16664 ts=2026-10-14 12:20:47.754 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\011.slide" ===
+[2026-10-14 12:20:47.752] [INFO ] [pid=16664] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:20:47.802] [INFO ] [pid=16664] [slide-version] fileId=ADB8F6C5 version=10 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18336 ts=2026-10-14 12:20:54.671 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\012.slide" ===
+[2026-10-14 12:20:54.669] [INFO ] [pid=18336] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:20:54.715] [INFO ] [pid=18336] [slide-version] fileId=ADB8F6C5 version=11 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18308 ts=2026-10-14 12:21:01.803 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\013.slide" ===
+[2026-10-14 12:21:01.802] [INFO ] [pid=18308] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:01.848] [INFO ] [pid=18308] [slide-version] fileId=ADB8F6C5 version=12 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=16456 ts=2026-10-14 12:21:08.770 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\014.slide" ===
+[2026-10-14 12:21:08.769] [INFO ] [pid=16456] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:08.814] [INFO ] [pid=16456] [slide-version] fileId=ADB8F6C5 version=13 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=5292 ts=2026-10-14 12:21:15.982 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\015.slide" ===
+[2026-10-14 12:21:15.980] [INFO ] [pid=5292] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:16.026] [INFO ] [pid=5292] [slide-version] fileId=ADB8F6C5 version=14 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=5796 ts=2026-10-14 12:21:23.236 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\016.slide" ===
+[2026-10-14 12:21:23.234] [INFO ] [pid=5796] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:23.282] [INFO ] [pid=5796] [slide-version] fileId=ADB8F6C5 version=15 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=19056 ts=2026-10-14 12:21:30.594 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\017.slide" ===
+[2026-10-14 12:21:30.593] [INFO ] [pid=19056] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:30.641] [INFO ] [pid=19056] [slide-version] fileId=ADB8F6C5 version=16 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=5064 ts=2026-10-14 12:21:38.052 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\018.slide" ===
+[2026-10-14 12:21:38.051] [INFO ] [pid=5064] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:38.096] [INFO ] [pid=5064] [slide-version] fileId=ADB8F6C5 version=17 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=12432 ts=2026-10-14 12:21:45.125 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\019.slide" ===
+[2026-10-14 12:21:45.123] [INFO ] [pid=12432] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:45.169] [INFO ] [pid=12432] [slide-version] fileId=ADB8F6C5 version=18 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=7156 ts=2026-10-14 12:21:52.333 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\020.slide" ===
+[2026-10-14 12:21:52.332] [INFO ] [pid=7156] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:52.378] [INFO ] [pid=7156] [slide-version] fileId=ADB8F6C5 version=19 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=16408 ts=2026-10-14 12:21:59.749 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\021.slide" ===
+[2026-10-14 12:21:59.745] [INFO ] [pid=16408] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:21:59.794] [INFO ] [pid=16408] [slide-version] fileId=ADB8F6C5 version=20 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=12364 ts=2026-10-14 12:22:06.936 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\022.slide" ===
+[2026-10-14 12:22:06.935] [INFO ] [pid=12364] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:22:06.980] [INFO ] [pid=12364] [slide-version] fileId=ADB8F6C5 version=21 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=15932 ts=2026-10-14 12:22:14.292 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\023.slide" ===
+[2026-10-14 12:22:14.289] [INFO ] [pid=15932] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:22:14.336] [INFO ] [pid=15932] [slide-version] fileId=ADB8F6C5 version=22 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=3388 ts=2026-10-14 12:22:21.494 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\024.slide" ===
+[2026-10-14 12:22:21.492] [INFO ] [pid=3388] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:22:21.538] [INFO ] [pid=3388] [slide-version] fileId=ADB8F6C5 version=23 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=11776 ts=2026-10-14 12:22:29.112 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\025.slide" ===
+[2026-10-14 12:22:29.111] [INFO ] [pid=11776] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:22:29.160] [INFO ] [pid=11776] [slide-version] fileId=ADB8F6C5 version=24 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18964 ts=2026-10-14 12:22:36.965 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\026.slide" ===
+[2026-10-14 12:22:36.962] [INFO ] [pid=18964] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:22:37.010] [INFO ] [pid=18964] [slide-version] fileId=ADB8F6C5 version=25 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=5736 ts=2026-10-14 12:22:44.230 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\027.slide" ===
+[2026-10-14 12:22:44.228] [INFO ] [pid=5736] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:22:44.273] [INFO ] [pid=5736] [slide-version] fileId=ADB8F6C5 version=26 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=9560 ts=2026-10-14 12:22:51.705 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\028.slide" ===
+[2026-10-14 12:22:51.704] [INFO ] [pid=9560] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:22:51.748] [INFO ] [pid=9560] [slide-version] fileId=ADB8F6C5 version=27 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18092 ts=2026-10-14 12:22:59.018 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\029.slide" ===
+[2026-10-14 12:22:59.017] [INFO ] [pid=18092] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:22:59.067] [INFO ] [pid=18092] [slide-version] fileId=ADB8F6C5 version=28 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=9428 ts=2026-10-14 12:23:06.643 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\030.slide" ===
+[2026-10-14 12:23:06.642] [INFO ] [pid=9428] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:23:06.688] [INFO ] [pid=9428] [slide-version] fileId=ADB8F6C5 version=29 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18116 ts=2026-10-14 12:23:14.185 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\031.slide" ===
+[2026-10-14 12:23:14.183] [INFO ] [pid=18116] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:23:14.229] [INFO ] [pid=18116] [slide-version] fileId=ADB8F6C5 version=30 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=13972 ts=2026-10-14 12:23:21.665 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\032.slide" ===
+[2026-10-14 12:23:21.663] [INFO ] [pid=13972] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:23:21.711] [INFO ] [pid=13972] [slide-version] fileId=ADB8F6C5 version=31 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=14672 ts=2026-10-14 12:23:29.311 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\033.slide" ===
+[2026-10-14 12:23:29.310] [INFO ] [pid=14672] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:23:29.355] [INFO ] [pid=14672] [slide-version] fileId=ADB8F6C5 version=32 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=5300 ts=2026-10-14 12:23:37.131 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\034.slide" ===
+[2026-10-14 12:23:37.129] [INFO ] [pid=5300] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:23:37.181] [INFO ] [pid=5300] [slide-version] fileId=ADB8F6C5 version=33 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=5340 ts=2026-10-14 12:23:44.377 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\035.slide" ===
+[2026-10-14 12:23:44.375] [INFO ] [pid=5340] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:23:44.422] [INFO ] [pid=5340] [slide-version] fileId=ADB8F6C5 version=34 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=16776 ts=2026-10-14 12:23:51.957 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\036.slide" ===
+[2026-10-14 12:23:51.956] [INFO ] [pid=16776] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:23:52.001] [INFO ] [pid=16776] [slide-version] fileId=ADB8F6C5 version=35 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=12528 ts=2026-10-14 12:23:59.284 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\037.slide" ===
+[2026-10-14 12:23:59.282] [INFO ] [pid=12528] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:23:59.327] [INFO ] [pid=12528] [slide-version] fileId=ADB8F6C5 version=36 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=17436 ts=2026-10-14 12:24:07.256 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\038.slide" ===
+[2026-10-14 12:24:07.255] [INFO ] [pid=17436] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:24:07.307] [INFO ] [pid=17436] [slide-version] fileId=ADB8F6C5 version=37 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18572 ts=2026-10-14 12:24:15.038 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\039.slide" ===
+[2026-10-14 12:24:15.036] [INFO ] [pid=18572] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:24:15.085] [INFO ] [pid=18572] [slide-version] fileId=ADB8F6C5 version=38 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=15328 ts=2026-10-14 12:24:22.664 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\040.slide" ===
+[2026-10-14 12:24:22.662] [INFO ] [pid=15328] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:24:22.709] [INFO ] [pid=15328] [slide-version] fileId=ADB8F6C5 version=39 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=17564 ts=2026-10-14 12:24:30.375 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\041.slide" ===
+[2026-10-14 12:24:30.373] [INFO ] [pid=17564] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:24:30.425] [INFO ] [pid=17564] [slide-version] fileId=ADB8F6C5 version=40 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=10156 ts=2026-10-14 12:24:38.055 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\042.slide" ===
+[2026-10-14 12:24:38.053] [INFO ] [pid=10156] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:24:38.111] [INFO ] [pid=10156] [slide-version] fileId=ADB8F6C5 version=41 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=17476 ts=2026-10-14 12:24:45.892 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\043.slide" ===
+[2026-10-14 12:24:45.890] [INFO ] [pid=17476] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:24:45.937] [INFO ] [pid=17476] [slide-version] fileId=ADB8F6C5 version=42 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=12152 ts=2026-10-14 12:24:53.693 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\044.slide" ===
+[2026-10-14 12:24:53.691] [INFO ] [pid=12152] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:24:53.737] [INFO ] [pid=12152] [slide-version] fileId=ADB8F6C5 version=43 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=10088 ts=2026-10-14 12:25:01.237 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\045.slide" ===
+[2026-10-14 12:25:01.235] [INFO ] [pid=10088] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:25:01.280] [INFO ] [pid=10088] [slide-version] fileId=ADB8F6C5 version=44 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=5692 ts=2026-10-14 12:25:09.302 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\046.slide" ===
+[2026-10-14 12:25:09.300] [INFO ] [pid=5692] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:25:09.346] [INFO ] [pid=5692] [slide-version] fileId=ADB8F6C5 version=45 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18372 ts=2026-10-14 12:25:17.115 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\047.slide" ===
+[2026-10-14 12:25:17.114] [INFO ] [pid=18372] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:25:17.160] [INFO ] [pid=18372] [slide-version] fileId=ADB8F6C5 version=46 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=10480 ts=2026-10-14 12:25:24.957 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\048.slide" ===
+[2026-10-14 12:25:24.956] [INFO ] [pid=10480] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:25:25.001] [INFO ] [pid=10480] [slide-version] fileId=ADB8F6C5 version=47 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=2892 ts=2026-10-14 12:25:32.896 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\049.slide" ===
+[2026-10-14 12:25:32.894] [INFO ] [pid=2892] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:25:32.941] [INFO ] [pid=2892] [slide-version] fileId=ADB8F6C5 version=48 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx
+=== boot pid=18896 ts=2026-10-14 12:25:40.748 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl "D:\Desktop\新建文件夹 (2)\设计图集.pptx" --dsl-file "D:\Desktop\新建文件夹 (2)\slides\050.slide" ===
+[2026-10-14 12:25:40.747] [INFO ] [pid=18896] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-14 12:25:40.793] [INFO ] [pid=18896] [slide-version] fileId=ADB8F6C5 version=49 filePath=D:\Desktop\新建文件夹 (2)\设计图集.pptx

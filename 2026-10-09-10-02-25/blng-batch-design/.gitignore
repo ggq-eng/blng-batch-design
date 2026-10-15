@@ -1,0 +1,26 @@
+# 运行时产物 —— 含凭据，禁止提交/分发
+scripts/.blng_session.json
+scripts/.edge-profile/
+scripts/screenshots/
+scripts/design_prompts.json
+scripts/*.pptx
+
+# 输出目录
+*.pptx
+*.png
+
+# Python
+__pycache__/
+*.pyc
+
+# 环境变量与日志
+.env
+*.log
+
+# 运行时输出
+output/
+conversations/
+
+# OS
+Thumbs.db
+.DS_Store

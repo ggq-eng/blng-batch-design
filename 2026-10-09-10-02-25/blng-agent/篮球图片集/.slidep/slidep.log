@@ -1,0 +1,29 @@
+=== boot pid=4924 ts=2026-10-09 18:01:30.135 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js create 篮球图片集.pptx ===
+[2026-10-09 18:01:30.134] [INFO ] [pid=4924] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+=== boot pid=3456 ts=2026-10-09 18:02:00.417 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl 篮球图片集.pptx --dsl-file slides/01.slide ===
+[2026-10-09 18:02:00.416] [INFO ] [pid=3456] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:00.457] [INFO ] [pid=3456] [slide-version] fileId=sid_mv0s version=0 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx
+=== boot pid=19192 ts=2026-10-09 18:02:04.279 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl 篮球图片集.pptx --dsl-file slides/02.slide ===
+[2026-10-09 18:02:04.278] [INFO ] [pid=19192] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:04.321] [INFO ] [pid=19192] [slide-version] fileId=sid_mv0s version=1 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx
+=== boot pid=1280 ts=2026-10-09 18:02:08.077 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl 篮球图片集.pptx --dsl-file slides/03.slide ===
+[2026-10-09 18:02:08.076] [INFO ] [pid=1280] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:08.116] [INFO ] [pid=1280] [slide-version] fileId=sid_mv0s version=2 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx
+=== boot pid=13984 ts=2026-10-09 18:02:11.784 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl 篮球图片集.pptx --dsl-file slides/04.slide ===
+[2026-10-09 18:02:11.782] [INFO ] [pid=13984] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:11.824] [INFO ] [pid=13984] [slide-version] fileId=sid_mv0s version=3 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx
+=== boot pid=4576 ts=2026-10-09 18:02:15.499 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl 篮球图片集.pptx --dsl-file slides/05.slide ===
+[2026-10-09 18:02:15.497] [INFO ] [pid=4576] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:15.539] [INFO ] [pid=4576] [slide-version] fileId=sid_mv0s version=4 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx
+=== boot pid=7900 ts=2026-10-09 18:02:19.206 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl 篮球图片集.pptx --dsl-file slides/06.slide ===
+[2026-10-09 18:02:19.205] [INFO ] [pid=7900] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:19.246] [INFO ] [pid=7900] [slide-version] fileId=sid_mv0s version=5 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx
+=== boot pid=18712 ts=2026-10-09 18:02:23.082 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl 篮球图片集.pptx --dsl-file slides/07.slide ===
+[2026-10-09 18:02:23.081] [INFO ] [pid=18712] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:23.122] [INFO ] [pid=18712] [slide-version] fileId=sid_mv0s version=6 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx
+=== boot pid=5160 ts=2026-10-09 18:02:27.714 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js upsert-dsl 篮球图片集.pptx --dsl-file slides/08.slide ===
+[2026-10-09 18:02:27.713] [INFO ] [pid=5160] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:27.756] [INFO ] [pid=5160] [slide-version] fileId=sid_mv0s version=0 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx
+=== boot pid=9548 ts=2026-10-09 18:02:36.763 cwd=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集 argv=C:\Users\Administrator\.workbuddy\binaries\node\versions\22.22.2-6\lib\node_modules\@tencent\slidep\dist\index.js screenshot 篮球图片集.pptx --page-index 0 --out screenshots/p1.png ===
+[2026-10-09 18:02:36.758] [INFO ] [pid=9548] [server-url] baseUrl=http://127.0.0.1:39099 source=env
+[2026-10-09 18:02:36.809] [INFO ] [pid=9548] [slide-version] fileId=sid_mv0s version=0 filePath=C:\Users\Administrator\WorkBuddy\2026-10-09-10-02-25\blng-agent\篮球图片集\篮球图片集.pptx

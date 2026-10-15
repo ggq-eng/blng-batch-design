@@ -1,0 +1,90 @@
+{
+  "genre": "business-report",
+  "theme_name": "business-modern（按内容体裁微调字体与字号）",
+  "note": "在 business-modern 基础上，按转换层字体契约将正文字体改为宋体、标题改为黑体，并将正文字号定为小四（12pt）。",
+  "tokens": {
+    "typography": {
+      "fontFamily": {
+        "heading": "\"SimHei\", \"黑体\", sans-serif",
+        "body": "\"SimSun\", \"宋体\", serif",
+        "code": "\"Consolas\", \"Courier New\", monospace"
+      },
+      "fontSize": {
+        "coverTitle": "24pt",
+        "coverCategory": "12pt",
+        "h2": "16pt",
+        "h3": "14pt",
+        "body": "12pt",
+        "small": "10pt"
+      },
+      "lineHeight": { "body": 1.65, "heading": 1.35 },
+      "fontWeight": { "bold": 700, "normal": 400 }
+    },
+    "color": {
+      "primary": "#1565C0",
+      "heading": "#1A237E",
+      "text": "#212121",
+      "muted": "#616161",
+      "border": "#C7CDD6",
+      "background": "#FFFFFF",
+      "highlight": "#F5F7FA",
+      "tableHead": "#E8EEF7",
+      "codeBg": "#F4F6F8",
+      "codeBorder": "#D6DCE5"
+    },
+    "spacing": {
+      "2xs": "0.3em", "tight": "0.35em", "xs": "0.4em", "sm": "0.5em",
+      "md": "0.6em", "lg": "0.8em", "xl": "1.6em",
+      "paragraph": "0.7em", "section": "1.6em", "block": "0.9em",
+      "indent": "2em", "cell": "0.4em 0.6em", "code": "0.5em 0.8em",
+      "box": "0.8em 1em"
+    },
+    "layout": {
+      "pageSize": "A4",
+      "marginPage": "2.5cm",
+      "contentWidth": "15.6cm"
+    }
+  },
+  "css_variables": {
+    "--typography-fontFamily-heading": "\"SimHei\", \"黑体\", sans-serif",
+    "--typography-fontFamily-body": "\"SimSun\", \"宋体\", serif",
+    "--typography-fontFamily-code": "\"Consolas\", \"Courier New\", monospace",
+    "--typography-fontSize-coverTitle": "24pt",
+    "--typography-fontSize-coverCategory": "12pt",
+    "--typography-fontSize-h1": "22pt",
+    "--typography-fontSize-h2": "16pt",
+    "--typography-fontSize-h3": "14pt",
+    "--typography-fontSize-body": "12pt",
+    "--typography-fontSize-small": "10pt",
+    "--typography-lineHeight-body": "1.65",
+    "--typography-lineHeight-heading": "1.35",
+    "--typography-fontWeight-bold": "700",
+    "--typography-fontWeight-normal": "400",
+    "--color-primary": "#1565C0",
+    "--color-heading": "#1A237E",
+    "--color-text": "#212121",
+    "--color-muted": "#616161",
+    "--color-border": "#C7CDD6",
+    "--color-bg": "#FFFFFF",
+    "--color-highlight": "#F5F7FA",
+    "--color-table-head": "#E8EEF7",
+    "--color-code-bg": "#F4F6F8",
+    "--color-code-border": "#D6DCE5",
+    "--spacing-2xs": "0.3em",
+    "--spacing-tight": "0.35em",
+    "--spacing-xs": "0.4em",
+    "--spacing-sm": "0.5em",
+    "--spacing-md": "0.6em",
+    "--spacing-lg": "0.8em",
+    "--spacing-xl": "1.6em",
+    "--spacing-paragraph": "0.7em",
+    "--spacing-section": "1.6em",
+    "--spacing-block": "0.9em",
+    "--spacing-indent": "2em",
+    "--spacing-cell": "0.4em 0.6em",
+    "--spacing-code": "0.5em 0.8em",
+    "--spacing-box": "0.8em 1em",
+    "--margin-page": "2.5cm",
+    "--page-content-width": "15.6cm"
+  }
+}

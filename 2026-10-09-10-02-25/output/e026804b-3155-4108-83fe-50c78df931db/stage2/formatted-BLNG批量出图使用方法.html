@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="docx-page-size" content="A4">
+<title>BLNG 批量出图使用方法</title>
+<style>
+:root {
+  /* 字体（正文宋体、标题黑体） */
+  --typography-fontFamily-heading: "SimHei", "黑体", sans-serif;
+  --typography-fontFamily-body: "SimSun", "宋体", serif;
+  /* 字号 */
+  --typography-fontSize-h1: 20pt;
+  --typography-fontSize-h2: 15pt;
+  --typography-fontSize-body: 12pt;
+  /* 行距与字重 */
+  --typography-lineHeight-body: 1.7;
+  --typography-lineHeight-heading: 1.4;
+  --typography-fontWeight-bold: 700;
+  /* 颜色 */
+  --color-primary: #1565C0;
+  --color-text: #212121;
+  /* 间距 */
+  --spacing-paragraph: 0.6em;
+  --spacing-section: 1.4em;
+  --spacing-block: 0.8em;
+  --spacing-indent: 2em;
+  --margin-page: 2.5cm;
+  --page-content-width: 15.6cm;
+  /* 本地别名 */
+  --fs-h1: var(--typography-fontSize-h1);
+  --fs-h2: var(--typography-fontSize-h2);
+  --fs-body: var(--typography-fontSize-body);
+  --ff-heading: var(--typography-fontFamily-heading);
+  --ff-body: var(--typography-fontFamily-body);
+  --lh-body: var(--typography-lineHeight-body);
+  --lh-heading: var(--typography-lineHeight-heading);
+  --fw-bold: var(--typography-fontWeight-bold);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+  max-width: var(--page-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: var(--margin-page);
+  padding-bottom: var(--margin-page);
+}
+
+h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  line-height: var(--lh-heading);
+  text-align: center;
+  text-indent: 0;
+  margin-bottom: var(--spacing-section);
+}
+
+h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  line-height: var(--lh-heading);
+  text-indent: 0;
+  margin-top: var(--spacing-section);
+  margin-bottom: var(--spacing-block);
+}
+
+p {
+  text-indent: var(--spacing-indent);
+  margin-bottom: var(--spacing-paragraph);
+}
+</style>
+</head>
+<body>
+
+<section role="body">
+
+  <h1>BLNG 批量出图使用方法</h1>
+
+  <p>在 WorkBuddy 里说一句需求，它就会自动去 BLNG 网站批量生成珠宝设计图，并把图片做成 PPT，全程不用你自己开网页操作。</p>
+
+  <h2>一、怎么用</h2>
+
+  <p>第一步，说需求。例如说：「用 BLNG 生成 50 张珠宝设计图。」第一次使用时，它会向你要 BLNG 的账号和密码，填一次就行，以后不用再填。</p>
+
+  <p>第二步，等它出图。可以随时问一句「现在跑到第几张了」。建议一次跑 25 到 50 张；中途断了，说一句「继续」就会接着往下跑。</p>
+
+  <p>第三步，做成 PPT。说一句「把图片做成 PPT」，它就会生成一个每页一张图的 PPT。</p>
+
+  <h2>二、存到哪里</h2>
+
+  <p>图片默认保存在 D 盘桌面「新建文件夹 (2)」下面的「设计图」文件夹里；PPT 保存在同一层，文件名是「设计图集.pptx」。想换个位置，直接告诉 WorkBuddy 就行。</p>
+
+</section>
+
+</body>
+</html>

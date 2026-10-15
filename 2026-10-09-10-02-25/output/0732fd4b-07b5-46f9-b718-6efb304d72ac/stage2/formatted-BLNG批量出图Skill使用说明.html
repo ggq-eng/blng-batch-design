@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="docx-page-size" content="A4">
+<title>BLNG 批量出图 Skill 使用说明</title>
+<style>
+/* —— 页面规则：正文页脚居中页码；封面与目录页无页脚 —— */
+@page { @bottom-center { content: counter(page); } }
+@page cover { @bottom-center { content: none; } }
+section[role="cover"] { page: cover; }
+
+:root {
+  /* 设计令牌 · 字体（正文宋体、标题黑体，符合转换层字体契约） */
+  --typography-fontFamily-heading: "SimHei", "黑体", sans-serif;
+  --typography-fontFamily-body: "SimSun", "宋体", serif;
+  --typography-fontFamily-code: "Consolas", "Courier New", monospace;
+
+  /* 设计令牌 · 字号 */
+  --typography-fontSize-coverTitle: 24pt;
+  --typography-fontSize-coverCategory: 12pt;
+  --typography-fontSize-h1: 22pt;
+  --typography-fontSize-h2: 16pt;
+  --typography-fontSize-h3: 14pt;
+  --typography-fontSize-body: 12pt;
+  --typography-fontSize-small: 10pt;
+
+  /* 设计令牌 · 行距与字重 */
+  --typography-lineHeight-body: 1.65;
+  --typography-lineHeight-heading: 1.35;
+  --typography-fontWeight-bold: 700;
+  --typography-fontWeight-normal: 400;
+
+  /* 设计令牌 · 配色（商务深蓝主题） */
+  --color-primary: #1565C0;
+  --color-heading: #1A237E;
+  --color-text: #212121;
+  --color-muted: #616161;
+  --color-border: #C7CDD6;
+  --color-bg: #FFFFFF;
+  --color-highlight: #F5F7FA;
+  --color-table-head: #E8EEF7;
+  --color-code-bg: #F4F6F8;
+  --color-code-border: #D6DCE5;
+
+  /* 设计令牌 · 间距 */
+  --spacing-2xs: 0.3em;
+  --spacing-tight: 0.35em;
+  --spacing-xs: 0.4em;
+  --spacing-sm: 0.5em;
+  --spacing-md: 0.6em;
+  --spacing-lg: 0.8em;
+  --spacing-xl: 1.6em;
+  --spacing-paragraph: 0.7em;
+  --spacing-section: 1.6em;
+  --spacing-block: 0.9em;
+  --spacing-indent: 2em;
+  --spacing-cell: 0.4em 0.6em;
+  --spacing-code: 0.5em 0.8em;
+  --spacing-box: 0.8em 1em;
+
+  /* 设计令牌 · 版心 */
+  --margin-page: 2.5cm;
+  --page-content-width: 15.6cm;
+
+  /* 本地别名 */
+  --fs-h1: var(--typography-fontSize-h1);
+  --fs-h2: var(--typography-fontSize-h2);
+  --fs-h3: var(--typography-fontSize-h3);
+  --fs-body: var(--typography-fontSize-body);
+  --fs-small: var(--typography-fontSize-small);
+  --ff-heading: var(--typography-fontFamily-heading);
+  --ff-body: var(--typography-fontFamily-body);
+  --ff-mono: var(--typography-fontFamily-code);
+  --lh-body: var(--typography-lineHeight-body);
+  --lh-heading: var(--typography-lineHeight-heading);
+  --fw-bold: var(--typography-fontWeight-bold);
+  --fw-normal: var(--typography-fontWeight-normal);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  max-width: var(--page-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* —— 封面 —— */
+.report-cover { padding: var(--margin-page) 0; }
+.cover-category {
+  font-family: var(--ff-heading);
+  font-size: var(--typography-fontSize-coverCategory);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+.cover-title {
+  font-family: var(--ff-heading);
+  font-size: var(--typography-fontSize-coverTitle);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  line-height: var(--lh-heading);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+.cover-subtitle {
+  font-family: var(--ff-body);
+  font-size: var(--typography-fontSize-coverCategory);
+  color: var(--color-muted);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+.cover-meta {
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* —— 目录 —— */
+.doc-toc { padding: var(--spacing-block) 0; }
+.toc-title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+.toc-list, .toc-list ol, .toc-list ul { list-style: none; list-style-type: none; padding-left: 0; }
+.toc-list li {
+  font-family: var(--ff-body);
+  text-indent: 0;
+  margin-bottom: var(--spacing-tight);
+  color: var(--color-text);
+}
+.toc-list a { color: var(--color-text); text-decoration: none; }
+
+/* —— 正文 —— */
+.report-body { padding-top: var(--spacing-section); }
+.report-body h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  line-height: var(--lh-heading);
+  text-indent: 0;
+  margin-top: var(--spacing-section);
+  margin-bottom: var(--spacing-block);
+}
+.report-body h3 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  line-height: var(--lh-heading);
+  text-indent: 0;
+  margin-top: var(--spacing-block);
+  margin-bottom: var(--spacing-sm);
+}
+.report-body p { text-indent: 2em; margin-bottom: var(--spacing-paragraph); }
+.report-body li { text-indent: 0; margin-bottom: var(--spacing-2xs); }
+.report-body ul, .report-body ol { padding-left: var(--spacing-indent); margin-bottom: var(--spacing-paragraph); }
+
+/* —— 执行摘要 —— */
+.executive-summary {
+  padding: var(--spacing-box);
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-highlight);
+  margin-bottom: var(--spacing-section);
+}
+.executive-summary h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  text-indent: 0;
+  margin-bottom: var(--spacing-md);
+}
+.executive-summary p { text-indent: 2em; }
+.executive-summary td p, .executive-summary th p { text-indent: 0; }
+
+/* —— 数据表 —— */
+table.tbl, table.kpi {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-block);
+}
+table.tbl th, table.tbl td, table.kpi th, table.kpi td {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-cell);
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  text-indent: 0;
+  vertical-align: top;
+}
+table.tbl th, table.kpi th {
+  background: var(--color-table-head);
+  color: var(--color-heading);
+  font-weight: var(--fw-bold);
+}
+table.kpi td { text-align: center; }
+.kpi-value {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  text-align: center;
+}
+.kpi-label { font-size: var(--fs-small); color: var(--color-muted); text-align: center; }
+
+/* —— 代码块（单列裸表承载底纹，多段落结构完整保留） —— */
+table.code-block {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-block);
+}
+table.code-block th {
+  background: var(--color-code-border);
+  border: 1px solid var(--color-code-border);
+  padding: var(--spacing-xs) var(--spacing-lg);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  text-align: left;
+  text-indent: 0;
+}
+table.code-block td {
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-code-border);
+  padding: var(--spacing-code);
+}
+.code-line {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-small);
+  text-indent: 0;
+  margin-bottom: 0;
+  color: var(--color-text);
+}
+
+/* —— 提示段落（单段落 CSS 强调） —— */
+.note-warn {
+  border-left: 3px solid var(--color-primary);
+  background: var(--color-highlight);
+  padding: var(--spacing-box);
+  text-indent: 0;
+  margin-bottom: var(--spacing-paragraph);
+}
+.note-tip {
+  border-left: 3px solid var(--color-muted);
+  background: var(--color-highlight);
+  padding: var(--spacing-box);
+  text-indent: 0;
+  margin-bottom: var(--spacing-paragraph);
+}
+</style>
+</head>
+<body>
+
+  <section role="cover" class="report-cover">
+    <p class="cover-category">工具使用说明</p>
+    <h1 class="cover-title">BLNG 批量出图 Skill 使用说明</h1>
+    <p class="cover-subtitle">珠宝 / 钻石 AI 设计图批量生成与 PPT 自动合成</p>
+    <p class="cover-meta">WorkBuddy 企业 AI 提效方案</p>
+    <p class="cover-meta">2026 年 10 月</p>
+  </section>
+
+  <section role="cover">
+    <nav class="doc-toc" aria-label="文档目录">
+      <p class="toc-title">目录</p>
+      <ol class="toc-list">
+        <li><a href="#section-1">一、这个 Skill 能做什么</a></li>
+        <li><a href="#section-2">二、前置要求</a></li>
+        <li><a href="#section-3">三、Step 1：填写账号密码</a></li>
+        <li><a href="#section-4">四、Step 2：首次登录</a></li>
+        <li><a href="#section-5">五、Step 3：链路自检</a></li>
+        <li><a href="#section-6">六、Step 4：批量出图（核心步骤）</a></li>
+        <li><a href="#section-7">七、Step 5：合成 PPT</a></li>
+        <li><a href="#section-8">八、参数速查</a></li>
+        <li><a href="#section-9">九、关键约束与避坑（必读）</a></li>
+        <li><a href="#section-10">十、常见问题 FAQ</a></li>
+        <li><a href="#section-11">十一、目录结构说明</a></li>
+      </ol>
+    </nav>
+  </section>
+
+  <section role="body" class="report-body" data-page-restart="1">
+
+    <div class="executive-summary">
+      <h2>执行摘要</h2>
+      <p>本 Skill 用 Edge 浏览器自动化驱动 BLNG（app.blng.ai），<strong>在一个对话内连续生成多张</strong>珠宝与钻石设计图，按序号自动落盘到指定目录，最后一键合成「一张图片一页」的 PPT。使用者填好账号密码、完成一次登录后，日常跑批即是一条命令。</p>
+      <table class="kpi">
+        <thead>
+          <tr>
+            <th class="kpi-label">单张生成耗时</th>
+            <th class="kpi-label">单档建议张数</th>
+            <th class="kpi-label">提示词模板</th>
+            <th class="kpi-label">PPT 版式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p class="kpi-value">约 76 秒</p></td>
+            <td><p class="kpi-value">25 – 50 张</p></td>
+            <td><p class="kpi-value">300 条</p></td>
+            <td><p class="kpi-value">一图一页</p></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>使用前需完成三件事：填写账号密码、执行一次登录、用 3 张图自检链路。之后按切片方式跑批，最后一键出 PPT。</p>
+    </div>
+
+    <main>
+
+      <h2 id="section-1">一、这个 Skill 能做什么</h2>
+
+      <p>本 Skill 把「BLNG 网页端手工出图」沉淀为可复用的自动化管线，核心能力如下。</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>能力</th><th>状态</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>单对话连续出图</td><td>支持</td><td>提示词逐条提交，在同一项目内累积生成</td></tr>
+          <tr><td>按序命名落盘</td><td>支持</td><td>文件名格式「序号_款式名.png」，如 001_design_001.png</td></tr>
+          <tr><td>断点续跑</td><td>支持</td><td>目录内已存在且大于 1KB 的图片自动跳过，重复跑同一区间是安全的</td></tr>
+          <tr><td>一图一页 PPT</td><td>支持</td><td>自动生成，并校验页数与每页内嵌图片 MD5</td></tr>
+          <tr><td>免费版突破单日总量</td><td>不支持</td><td>免费版无每日上限，但同时仅允许 3 个活跃设计文件</td></tr>
+          <tr><td>跨对话复用旧项目续跑</td><td>不支持</td><td>BLNG 会清理免费档旧项目，续跑须新开项目</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>速度参考</strong>：实测约 76 秒每张。50 张约 1 小时，250 张约 5.3 小时。因此大批量任务必须<strong>切片执行</strong>，详见第六节。</p>
+
+      <h2 id="section-2">二、前置要求</h2>
+
+      <p>正式跑批前，请先确认运行环境、依赖与相关版本均已就绪。以下三节分别说明环境清单、依赖安装与文档信息。</p>
+
+      <h3>（一）环境清单</h3>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>项</th><th>要求</th><th>用途</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>操作系统</td><td>Windows</td><td>依赖本机 Edge 的调试端口</td></tr>
+          <tr><td>浏览器</td><td>Microsoft Edge</td><td>无需 Chrome 或 Chromium，直接复用本机 Edge</td></tr>
+          <tr><td>Python</td><td>3.10 及以上</td><td>运行全部脚本</td></tr>
+          <tr><td>Node.js</td><td>18 及以上</td><td>仅在合成 PPT 时需要</td></tr>
+          <tr><td>PPT 引擎</td><td>@tencent/slidep</td><td>合成 PPT 时需要</td></tr>
+          <tr><td>网络</td><td>可直连 BLNG</td><td>若走系统代理，脚本已内置回环地址排除</td></tr>
+        </tbody>
+      </table>
+
+      <h3>（二）依赖安装</h3>
+
+      <p>Python 依赖安装到受管虚拟环境：</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">PY=/c/Users/Administrator/.workbuddy/binaries/python/envs/default/Scripts/python.exe</p>
+          <p class="code-line">"$PY" -m pip install browser-use websockets</p>
+        </td></tr></tbody>
+      </table>
+
+      <p class="note-warn">&nbsp;&nbsp;<strong>必须使用上述虚拟环境解释器运行脚本</strong>，不要使用系统自带的 python。系统 Python 缺少 websockets 模块，执行时会报错 ModuleNotFoundError: No module named 'websockets'。本文后续所有 python xxx.py 命令，均请理解为 "$PY" xxx.py。</p>
+
+      <p>确认 PPT 引擎可用：</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">node -e "console.log(require.resolve('@tencent/slidep/dist/index.js'))"</p>
+        </td></tr></tbody>
+      </table>
+
+      <p>若提示找不到模块，请执行 npm install -g @tencent/slidep 安装。</p>
+
+      <h3>（三）文档信息</h3>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>项</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>适用读者</td><td>具备基本命令行操作能力的技术人员或运营人员</td></tr>
+          <tr><td>前置知识</td><td>命令行基础、文本编辑器基本操作</td></tr>
+          <tr><td>涉及版本</td><td>Python 3.13.12、Node.js 22.22.2、Microsoft Edge</td></tr>
+          <tr><td>预计阅读时间</td><td>约 10 分钟；首次完整跑通约 15 分钟</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="section-3">三、Step 1：填写账号密码</h2>
+
+      <p>凭据文件位于 scripts/blng_session.py。该文件交付时<strong>账号密码为空</strong>，需使用者自行填写。打开后找到如下片段：</p>
+
+      <table class="code-block">
+        <thead><tr><th>blng_session.py 片段</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line"># ============================================================</p>
+          <p class="code-line">#  凭据配置 —— 使用前请填写你自己的 BLNG 账号</p>
+          <p class="code-line"># ============================================================</p>
+          <p class="code-line"># 方式一（推荐）：直接填写下面两行</p>
+          <p class="code-line">EMAIL = ""</p>
+          <p class="code-line">PASSWORD = ""</p>
+          <p class="code-line"># 方式二：设置环境变量 BLNG_EMAIL / BLNG_PASSWORD（优先级高于上面的填写）</p>
+        </td></tr></tbody>
+      </table>
+
+      <p><strong>方式一：直接填写。</strong>把 EMAIL 与 PASSWORD 填成自己的 BLNG 账号：</p>
+
+      <table class="code-block">
+        <thead><tr><th>blng_session.py</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">EMAIL = "你的账号@example.com"</p>
+          <p class="code-line">PASSWORD = "你的密码"</p>
+        </td></tr></tbody>
+      </table>
+
+      <p><strong>方式二：环境变量。</strong>保持文件内为空，运行时注入：</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">export BLNG_EMAIL="你的账号@example.com"</p>
+          <p class="code-line">export BLNG_PASSWORD="你的密码"</p>
+        </td></tr></tbody>
+      </table>
+
+      <p class="note-warn">&nbsp;&nbsp;环境变量优先级<strong>高于</strong>文件内填写；两者同时设置时，以环境变量为准。</p>
+      <p class="note-warn">&nbsp;&nbsp;请勿将填好真实密码的 blng_session.py 提交到公开仓库或对外分享。</p>
+
+      <p><strong>预期结果</strong>：文件中 EMAIL 与 PASSWORD 已填入有效值，或环境变量已设置。</p>
+
+      <h2 id="section-4">四、Step 2：首次登录</h2>
+
+      <p>登录会把认证态落盘为会话快照，之后跑批自动注入，<strong>无需重复登录</strong>。</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">cd 到 skill 安装目录下的 scripts 子目录</p>
+          <p class="code-line">NO_PROXY='localhost,127.0.0.1,::1,0.0.0.0' HTTP_PROXY='' HTTPS_PROXY='' \</p>
+          <p class="code-line">&nbsp;&nbsp;"$PY" blng_session.py login</p>
+        </td></tr></tbody>
+      </table>
+
+      <p><strong>预期输出</strong>：</p>
+
+      <table class="code-block">
+        <thead><tr><th>预期输出</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">{ "ok": true, "url": "https://app.blng.ai/dashboard", "logged_in": true }</p>
+        </td></tr></tbody>
+      </table>
+
+      <p>脚本执行过程：后台拉起 Edge（调试端口 9222，独立用户目录 .edge-profile/），自动填写邮箱密码并提交，导出会话到 scripts/.blng_session.json。</p>
+
+      <p>检查登录态（不重新登录）：</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">NO_PROXY='localhost,127.0.0.1,::1,0.0.0.0' HTTP_PROXY='' HTTPS_PROXY='' \</p>
+          <p class="code-line">&nbsp;&nbsp;"$PY" blng_session.py status</p>
+        </td></tr></tbody>
+      </table>
+
+      <p>返回 "logged_in": true 即为就绪。</p>
+
+      <p class="note-warn">&nbsp;&nbsp;所有命令<strong>必须</strong>带上 NO_PROXY='localhost,127.0.0.1,::1,0.0.0.0' HTTP_PROXY='' HTTPS_PROXY='' 前缀。系统代理会劫持本地调试端口，导致连接失败（502）。</p>
+
+      <h2 id="section-5">五、Step 3：链路自检</h2>
+
+      <p>首次使用建议先跑 3 张图，验证整条链路。以下三个小步骤依次完成提示词生成、账号容量核对与实际出图。</p>
+
+      <p><strong>第 1 步</strong>：生成一份小的提示词清单（5 条）。</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">"$PY" gen_prompts.py 5 design_prompts.json</p>
+        </td></tr></tbody>
+      </table>
+
+      <p><strong>预期输出</strong>：生成 5 条，输出文件 design_prompts.json</p>
+
+      <p><strong>第 2 步</strong>：检查账号当前的活跃设计文件数。</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">"$PY" check_projects.py</p>
+        </td></tr></tbody>
+      </table>
+
+      <p><strong>预期输出</strong>：显示当前活跃设计文件数与方案上限（免费版上限为 3）。</p>
+
+      <p><strong>第 3 步</strong>：跑 3 张图。</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">NO_PROXY='localhost,127.0.0.1,::1,0.0.0.0' HTTP_PROXY='' HTTPS_PROXY='' \</p>
+          <p class="code-line">&nbsp;&nbsp;"$PY" blng_conversation.py --file design_prompts.json --name smoke --start 1 --end 3</p>
+        </td></tr></tbody>
+      </table>
+
+      <p><strong>预期结果</strong>：约 4 分钟后，到 D:\Desktop\新建文件夹 (2)\设计图 目录下查看，应出现：</p>
+
+      <table class="code-block">
+        <thead><tr><th>落盘文件</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">001_design_001.png</p>
+          <p class="code-line">002_design_002.png</p>
+          <p class="code-line">003_design_003.png</p>
+        </td></tr></tbody>
+      </table>
+
+      <p>出现这三张图，说明整条链路已打通。</p>
+
+      <h2 id="section-6">六、Step 4：批量出图（核心步骤）</h2>
+
+      <p>本节是整条管线的主体：先准备完整提示词清单，再按序号窗口切片跑批，并掌握切片大小的取舍原则。</p>
+
+      <h3>（一）准备完整提示词清单</h3>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">"$PY" gen_prompts.py 300 design_prompts.json</p>
+        </td></tr></tbody>
+      </table>
+
+      <p>该脚本按「10 品类 × 10 宝石 × 3 金属」组合生成 300 条珠宝设计提示词。也可使用自己的清单，只需保持如下字段结构：</p>
+
+      <table class="code-block">
+        <thead><tr><th>design_prompts.json</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">[</p>
+          <p class="code-line">&nbsp;&nbsp;{ "name": "design_001", "prompt": "an engagement ring featuring a round brilliant-cut diamond ..." }</p>
+          <p class="code-line">]</p>
+        </td></tr></tbody>
+      </table>
+
+      <h3>（二）切片跑批</h3>
+
+      <p>按序号窗口分批推进。以下示例跑第 1 至第 50 张：</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">NO_PROXY='localhost,127.0.0.1,::1,0.0.0.0' HTTP_PROXY='' HTTPS_PROXY='' \</p>
+          <p class="code-line">&nbsp;&nbsp;"$PY" blng_conversation.py \</p>
+          <p class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;--file design_prompts.json \</p>
+          <p class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;--name design_run \</p>
+          <p class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;--start 1 --end 50</p>
+        </td></tr></tbody>
+      </table>
+
+      <p class="note-warn">&nbsp;&nbsp;<strong>落盘目录已写死</strong>为 D:\Desktop\新建文件夹 (2)\设计图，无需再传 --out-dir。</p>
+
+      <p><strong>预期输出</strong>（节选）：</p>
+
+      <table class="code-block">
+        <thead><tr><th>预期输出</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">[1/50] (#1) design_001</p>
+          <p class="code-line">&nbsp;&nbsp;&nbsp;click[New Design] 完成</p>
+          <p class="code-line">&nbsp;&nbsp;&nbsp;生成中... 完成</p>
+          <p class="code-line">&nbsp;&nbsp;&nbsp;已保存 001_design_001.png</p>
+          <p class="code-line">...</p>
+          <p class="code-line">[50/50] (#50) design_050</p>
+          <p class="code-line">&nbsp;&nbsp;&nbsp;已保存 050_design_050.png</p>
+        </td></tr></tbody>
+      </table>
+
+      <p><strong>预期结果</strong>：D:\Desktop\新建文件夹 (2)\设计图 下累积 50 张图片，并生成 manifest.json 记录出图明细。</p>
+
+      <h3>（三）关于切片大小</h3>
+
+      <p>受执行环境限制，<strong>单次命令超过 10 分钟会被中断</strong>。建议按以下档位推进：</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>单档张数</th><th>预计耗时</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>25</td><td>约 32 分钟</td><td>稳妥档位</td></tr>
+          <tr><td>50</td><td>约 64 分钟</td><td>常用档位，接近上限</td></tr>
+        </tbody>
+      </table>
+
+      <p>更大批量请按 50 一档递进：跑完 1-50，再跑 51-100，以此类推。</p>
+
+      <p class="note-warn">&nbsp;&nbsp;<strong>不要复用旧项目续跑</strong>。免费档项目会被 BLNG 清理，深链会在数秒后跳回首页导致失败。每档请新开项目，让脚本从首页自动新建入口进入。</p>
+
+      <p class="note-tip">&nbsp;&nbsp;目录内已存在且大于 1KB 的图片会自动跳过。因此<strong>重复执行同一区间不会重复消耗额度</strong>，中断后直接重跑该档即可。</p>
+
+      <h2 id="section-7">七、Step 5：合成 PPT</h2>
+
+      <p>出图完成后，用一条命令把整个目录合成 PPT。</p>
+
+      <table class="code-block">
+        <thead><tr><th>终端命令</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">"$PY" make_ppt.py --force</p>
+        </td></tr></tbody>
+      </table>
+
+      <p class="note-warn">&nbsp;&nbsp;<strong>参数已写死默认</strong>：读取目录 D:\Desktop\新建文件夹 (2)\设计图，输出文件 D:\Desktop\新建文件夹 (2)\设计图集.pptx。</p>
+
+      <p><strong>预期输出</strong>：</p>
+
+      <table class="code-block">
+        <thead><tr><th>预期输出</th></tr></thead>
+        <tbody><tr><td>
+          <p class="code-line">{ "ok": true, "slides": 50, "images": 50, "failed": [] }</p>
+        </td></tr></tbody>
+      </table>
+
+      <p><strong>预期结果</strong>：生成 设计图集.pptx，共 50 页，<strong>每个页面放置一张图片</strong>，页面版式为白色背景、图片居中、右下角显示页码（格式如 01/50）。脚本会在生成后自动校验页数与每页内嵌图片的 MD5，不通过则报错。</p>
+
+      <h2 id="section-8">八、参数速查</h2>
+
+      <p>以下两张表列出两个主脚本的全部命令行参数，均给出默认值，便于按需覆盖。</p>
+
+      <h3>（一）blng_conversation.py</h3>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>参数</th><th>必填</th><th>默认值</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>--file</td><td>是</td><td>—</td><td>提示词清单 JSON 路径</td></tr>
+          <tr><td>--name</td><td>否</td><td>conversation</td><td>任务名，用于日志与目录标识</td></tr>
+          <tr><td>--start</td><td>否</td><td>1</td><td>起始序号（含）</td></tr>
+          <tr><td>--end</td><td>否</td><td>到清单末尾</td><td>结束序号（含）</td></tr>
+          <tr><td>--out-dir</td><td>否</td><td>D:\Desktop\新建文件夹 (2)\设计图</td><td>图片落盘目录</td></tr>
+          <tr><td>--reuse-dir</td><td>否</td><td>—</td><td>显式复用输出目录</td></tr>
+          <tr><td>--reuse-url</td><td>否</td><td>—</td><td>复用项目 URL（仅同一次会话内有效）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>（二）make_ppt.py</h3>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>参数</th><th>必填</th><th>默认值</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>--dir</td><td>否</td><td>D:\Desktop\新建文件夹 (2)\设计图</td><td>图片目录</td></tr>
+          <tr><td>--out</td><td>否</td><td>D:\Desktop\新建文件夹 (2)\设计图集.pptx</td><td>输出 PPT 路径</td></tr>
+          <tr><td>--force</td><td>否</td><td>关闭</td><td>强制重建，覆盖已有 PPT</td></tr>
+        </tbody>
+      </table>
+
+      <h3>（三）路径覆盖方式</h3>
+
+      <p>如需临时改用其他目录，可用命令行参数覆盖：图片目录用 --out-dir，PPT 输入目录用 --dir，PPT 输出文件用 --out。也可设置环境变量 BLNG_OUT_DIR（图片目录）与 BLNG_PPT_OUT（PPT 输出）。</p>
+
+      <h2 id="section-9">九、关键约束与避坑（必读）</h2>
+
+      <p>以下六条是本管线最容易踩的坑，建议在正式跑批前逐条确认。</p>
+
+      <ol>
+        <li><strong>必须排除回环代理</strong>。所有联网命令都要加 NO_PROXY='localhost,127.0.0.1,::1,0.0.0.0' HTTP_PROXY='' HTTPS_PROXY='' 前缀。</li>
+        <li><strong>单次命令 10 分钟上限</strong>。大批量必须切片，否则会被中断。</li>
+        <li><strong>不要复用旧项目</strong>。每档新开项目，中断后重跑同档即可（已完成的图会自动跳过）。</li>
+        <li><strong>免费版同时仅 3 个活跃设计文件</strong>。跑批前可用 check_projects.py 核对；若已占满，先到网页端清理，或使用付费账号。</li>
+        <li><strong>会话有效期</strong>。登录态中 accessToken 约 1 小时过期、refreshToken 约 30 天。脚本每次跑批前会自动检查：有效则复用，失效则用凭据重新登录。</li>
+        <li><strong>运行时文件包含凭证</strong>。scripts/.blng_session.json 内含登录令牌，scripts/.edge-profile/ 内含浏览器登录状态。二次分发前请删除这两个路径。</li>
+      </ol>
+
+      <h2 id="section-10">十、常见问题 FAQ</h2>
+
+      <p>下表汇总使用过程中最常见的七类问题及其定位与处理方式。</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>问题</th><th>原因与处理</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>报错 ModuleNotFoundError: No module named 'websockets'</td><td>使用了错误的 Python 解释器。请改用受管虚拟环境解释器 /c/Users/Administrator/.workbuddy/binaries/python/envs/default/Scripts/python.exe</td></tr>
+          <tr><td>登录或跑批时报连接失败（502）</td><td>未排除系统代理。请在命令前加上 NO_PROXY='localhost,127.0.0.1,::1,0.0.0.0' HTTP_PROXY='' HTTPS_PROXY=''</td></tr>
+          <tr><td>status 显示 logged_in: false</td><td>会话已失效。重新执行一次 blng_session.py login 即可</td></tr>
+          <tr><td>跑批中途中断，需要从头再来吗</td><td>不需要。直接重跑同一档区间即可，已生成且大于 1KB 的图片会被自动跳过</td></tr>
+          <tr><td>合成 PPT 报错找不到 node 或引擎</td><td>请确认已安装 Node.js 18 以上版本及 @tencent/slidep。也可通过环境变量 BLNG_NODE 指定 node 路径</td></tr>
+          <tr><td>生成的图片有重复内容</td><td>脚本内置像素哈希去重，命中重复会自动重试。若重试后仍重复，属模型输出的偶发情况，可单独重跑该序号</td></tr>
+          <tr><td>可以修改落盘目录吗</td><td>可以。使用 --out-dir 参数覆盖，或设置环境变量 BLNG_OUT_DIR</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="section-11">十一、目录结构说明</h2>
+
+      <p>下表列出 Skill 的关键文件与默认输出路径，便于快速定位。</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>路径</th><th>用途</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>scripts/blng_session.py</td><td>凭据与会话管理，使用前需填写账号密码</td></tr>
+          <tr><td>scripts/blng_conversation.py</td><td>主生成器，单对话批量出图</td></tr>
+          <tr><td>scripts/make_ppt.py</td><td>目录转 PPT，含 MD5 校验</td></tr>
+          <tr><td>scripts/gen_prompts.py</td><td>批量生成提示词清单</td></tr>
+          <tr><td>scripts/check_projects.py</td><td>检查活跃设计文件数</td></tr>
+          <tr><td>scripts/.blng_session.json</td><td>会话快照（含令牌，勿外传）</td></tr>
+          <tr><td>scripts/.edge-profile/</td><td>Edge 独立用户目录</td></tr>
+          <tr><td>D:\Desktop\新建文件夹 (2)\设计图</td><td>图片落盘目录（默认）</td></tr>
+          <tr><td>D:\Desktop\新建文件夹 (2)\设计图集.pptx</td><td>PPT 输出文件（默认）</td></tr>
+        </tbody>
+      </table>
+
+    </main>
+
+  </section>
+
+</body>
+</html>

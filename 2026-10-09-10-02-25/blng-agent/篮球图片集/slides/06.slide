@@ -1,0 +1,4 @@
+<Slide style={{ width: 1280, height: 720, backgroundColor: '#FFFFFF', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <Image src="assets/06_basketball_team_huddle.png" style={{ width: 600, height: 600, objectFit: 'contain' }} />
+    <Text style={{ position: 'absolute', right: 40, bottom: 28, fontSize: 16, color: '#9CA3AF' }}>06/08</Text>
+</Slide>

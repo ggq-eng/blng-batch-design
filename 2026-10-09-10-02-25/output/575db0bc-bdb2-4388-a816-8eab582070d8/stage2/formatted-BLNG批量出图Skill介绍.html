@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="docx-page-size" content="A4">
+<title>BLNG 批量出图 Skill 介绍</title>
+<style>
+/* —— 页面规则：正文页脚居中页码；封面与目录页无页脚 —— */
+@page { @bottom-center { content: counter(page); } }
+@page cover { @bottom-center { content: none; } }
+section[role="cover"] { page: cover; }
+
+:root {
+  /* 设计令牌 · 字体（正文宋体、标题黑体，符合转换层字体契约） */
+  --typography-fontFamily-heading: "SimHei", "黑体", sans-serif;
+  --typography-fontFamily-body: "SimSun", "宋体", serif;
+  --typography-fontFamily-code: "Consolas", "Courier New", monospace;
+
+  /* 设计令牌 · 字号 */
+  --typography-fontSize-coverTitle: 24pt;
+  --typography-fontSize-coverCategory: 12pt;
+  --typography-fontSize-h1: 22pt;
+  --typography-fontSize-h2: 16pt;
+  --typography-fontSize-h3: 14pt;
+  --typography-fontSize-body: 12pt;
+  --typography-fontSize-small: 10pt;
+
+  /* 设计令牌 · 行距与字重 */
+  --typography-lineHeight-body: 1.65;
+  --typography-lineHeight-heading: 1.35;
+  --typography-fontWeight-bold: 700;
+  --typography-fontWeight-normal: 400;
+
+  /* 设计令牌 · 配色（商务深蓝主题） */
+  --color-primary: #1565C0;
+  --color-heading: #1A237E;
+  --color-text: #212121;
+  --color-muted: #616161;
+  --color-border: #C7CDD6;
+  --color-bg: #FFFFFF;
+  --color-highlight: #F5F7FA;
+  --color-table-head: #E8EEF7;
+  --color-code-bg: #F4F6F8;
+  --color-code-border: #D6DCE5;
+
+  /* 设计令牌 · 间距 */
+  --spacing-2xs: 0.3em;
+  --spacing-tight: 0.35em;
+  --spacing-xs: 0.4em;
+  --spacing-sm: 0.5em;
+  --spacing-md: 0.6em;
+  --spacing-lg: 0.8em;
+  --spacing-xl: 1.6em;
+  --spacing-paragraph: 0.7em;
+  --spacing-section: 1.6em;
+  --spacing-block: 0.9em;
+  --spacing-indent: 2em;
+  --spacing-cell: 0.4em 0.6em;
+  --spacing-code: 0.5em 0.8em;
+  --spacing-box: 0.8em 1em;
+
+  /* 设计令牌 · 版心 */
+  --margin-page: 2.5cm;
+  --page-content-width: 15.6cm;
+
+  /* 本地别名 */
+  --fs-h1: var(--typography-fontSize-h1);
+  --fs-h2: var(--typography-fontSize-h2);
+  --fs-h3: var(--typography-fontSize-h3);
+  --fs-body: var(--typography-fontSize-body);
+  --fs-small: var(--typography-fontSize-small);
+  --ff-heading: var(--typography-fontFamily-heading);
+  --ff-body: var(--typography-fontFamily-body);
+  --ff-mono: var(--typography-fontFamily-code);
+  --lh-body: var(--typography-lineHeight-body);
+  --lh-heading: var(--typography-lineHeight-heading);
+  --fw-bold: var(--typography-fontWeight-bold);
+  --fw-normal: var(--typography-fontWeight-normal);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  max-width: var(--page-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* —— 封面 —— */
+.report-cover { padding: var(--margin-page) 0; }
+.cover-category {
+  font-family: var(--ff-heading);
+  font-size: var(--typography-fontSize-coverCategory);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+.cover-title {
+  font-family: var(--ff-heading);
+  font-size: var(--typography-fontSize-coverTitle);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  line-height: var(--lh-heading);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+.cover-subtitle {
+  font-family: var(--ff-body);
+  font-size: var(--typography-fontSize-coverCategory);
+  color: var(--color-muted);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+.cover-meta {
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* —— 目录 —— */
+.doc-toc { padding: var(--spacing-block) 0; }
+.toc-title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+.toc-list, .toc-list ol, .toc-list ul { list-style: none; list-style-type: none; padding-left: 0; }
+.toc-list li {
+  font-family: var(--ff-body);
+  text-indent: 0;
+  margin-bottom: var(--spacing-tight);
+  color: var(--color-text);
+}
+.toc-list a { color: var(--color-text); text-decoration: none; }
+
+/* —— 正文 —— */
+.report-body { padding-top: var(--spacing-section); }
+.report-body h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  line-height: var(--lh-heading);
+  text-indent: 0;
+  margin-top: var(--spacing-section);
+  margin-bottom: var(--spacing-block);
+}
+.report-body h3 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  line-height: var(--lh-heading);
+  text-indent: 0;
+  margin-top: var(--spacing-block);
+  margin-bottom: var(--spacing-sm);
+}
+.report-body p { text-indent: 2em; margin-bottom: var(--spacing-paragraph); }
+.report-body li { text-indent: 0; margin-bottom: var(--spacing-2xs); }
+.report-body ul, .report-body ol { padding-left: var(--spacing-indent); margin-bottom: var(--spacing-paragraph); }
+
+/* —— 执行摘要 —— */
+.executive-summary {
+  padding: var(--spacing-box);
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-highlight);
+  margin-bottom: var(--spacing-section);
+}
+.executive-summary h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  text-indent: 0;
+  margin-bottom: var(--spacing-md);
+}
+.executive-summary p { text-indent: 2em; }
+.executive-summary td p, .executive-summary th p { text-indent: 0; }
+
+/* —— 数据表 —— */
+table.tbl, table.kpi {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-block);
+}
+table.tbl th, table.tbl td, table.kpi th, table.kpi td {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-cell);
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  text-indent: 0;
+  vertical-align: top;
+}
+table.tbl th, table.kpi th {
+  background: var(--color-table-head);
+  color: var(--color-heading);
+  font-weight: var(--fw-bold);
+}
+table.kpi td { text-align: center; }
+.kpi-value {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  text-align: center;
+}
+.kpi-label { font-size: var(--fs-small); color: var(--color-muted); text-align: center; }
+
+/* —— 提示段落（单段落 CSS 强调） —— */
+.note-warn {
+  border-left: 3px solid var(--color-primary);
+  background: var(--color-highlight);
+  padding: var(--spacing-box);
+  text-indent: 0;
+  margin-bottom: var(--spacing-paragraph);
+}
+.note-tip {
+  border-left: 3px solid var(--color-muted);
+  background: var(--color-highlight);
+  padding: var(--spacing-box);
+  text-indent: 0;
+  margin-bottom: var(--spacing-paragraph);
+}
+</style>
+</head>
+<body>
+
+  <section role="cover" class="report-cover">
+    <p class="cover-category">Skill 介绍</p>
+    <h1 class="cover-title">BLNG 批量出图 Skill 介绍</h1>
+    <p class="cover-subtitle">珠宝 / 钻石 AI 设计图的批量生成与演示文稿自动合成</p>
+    <p class="cover-meta">WorkBuddy 工具介绍</p>
+    <p class="cover-meta">2026 年 10 月</p>
+  </section>
+
+  <section role="cover">
+    <nav class="doc-toc" aria-label="文档目录">
+      <p class="toc-title">目录</p>
+      <ol class="toc-list">
+        <li><a href="#section-1">一、简介</a></li>
+        <li><a href="#section-2">二、核心能力</a></li>
+        <li><a href="#section-3">三、工作流程</a></li>
+        <li><a href="#section-4">四、使用前提</a></li>
+        <li><a href="#section-5">五、使用限制与注意事项</a></li>
+        <li><a href="#section-6">六、成果输出</a></li>
+        <li><a href="#section-7">七、包内结构与模块说明</a></li>
+        <li><a href="#section-8">八、常见问题</a></li>
+      </ol>
+    </nav>
+  </section>
+
+  <section role="body" class="report-body" data-page-restart="1">
+
+    <div class="executive-summary">
+      <h2>核心速览</h2>
+      <p>BLNG 批量出图是一套面向珠宝与钻石设计图的自动化产线。它把 BLNG 网页端「一次只能生成一张、逐张手动下载」的重复劳动，收敛成一次启动、批量产出的完整流程。使用者只需首次填写一次平台账号，其余提交描述、等待出图、下载归档、合成演示文稿等环节全部自动完成。</p>
+      <table class="kpi">
+        <thead>
+          <tr>
+            <th class="kpi-label">单张生成耗时</th>
+            <th class="kpi-label">建议单批张数</th>
+            <th class="kpi-label">演示文稿版式</th>
+            <th class="kpi-label">成品校验方式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p class="kpi-value">约 76 秒</p></td>
+            <td><p class="kpi-value">25 – 50 张</p></td>
+            <td><p class="kpi-value">一图一页</p></td>
+            <td><p class="kpi-value">哈希比对</p></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>整套流程分四步：准备设计描述清单、核对账号容量、批量出图、合成演示文稿。其中第三步是核心，也是使用时最需要建立合理预期的一步。</p>
+    </div>
+
+    <main>
+
+      <h2 id="section-1">一、简介</h2>
+
+      <p>BLNG（app.blng.ai）是一个在线珠宝与钻石 AI 设计平台，用户输入一段文字描述，平台就会生成对应的设计图。它的能力很强，但网页端的交互方式并不适合批量作业：每生成一张图都需要重新提交一次描述，出图之后还要手动下载保存并命名。要凑齐几十张款式图，就得把同样的动作重复几十遍。</p>
+
+      <p>本工具针对的正是这一段重复劳动。它通过浏览器自动化接管了中间的全部操作——自动打开页面、自动填写设计描述、自动等待出图、自动下载归档，最后再把图片合成为一份可直接使用的演示文稿。中途可以随时查看进度，也可以暂停后接着往下跑。</p>
+
+      <p>从定位上说，这是一套「半自动产线」而非「全无人值守服务」。账号登录环节保留人工介入的空间，批量生成、下载、命名、排版则全部自动完成。</p>
+
+      <h3>1.1 适用的业务场景</h3>
+
+      <p>只要是需要成批产出珠宝款式图、且不希望在重复操作上耗费人力的环节，都可以使用本工具。下表列出几类典型用法。</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>场景</th><th>典型用法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>电商选品图</td><td>按品类批量出图，供选品会快速过筛</td></tr>
+          <tr><td>款式库扩充</td><td>一次性补足某个材质或品类下的款式数量</td></tr>
+          <tr><td>设计灵感批量出稿</td><td>同主题多版本变体，供设计师二次筛选</td></tr>
+          <tr><td>详情页素材生产</td><td>按固定规格批量产出，直接进入排版环节</td></tr>
+        </tbody>
+      </table>
+
+      <h3>1.2 不适用的情况</h3>
+
+      <p>本工具不负责设计决策。它只把已有的文字描述批量转成图片，描述的创意、主题、风格仍由使用者提供。此外，它依赖 BLNG 平台本身，平台策略调整会直接影响可用性，这一点在第五节「使用限制与注意事项」中说明。</p>
+
+      <h2 id="section-2">二、核心能力</h2>
+
+      <p>下表列出工具当前具备的能力与边界，状态为「支持」的项可直接使用。</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>能力</th><th>状态</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>单对话连续出图</td><td>支持</td><td>设计描述逐条自动提交，在同一任务内累积，不中断</td></tr>
+          <tr><td>按序命名落盘</td><td>支持</td><td>文件名形如 001_款式名.png，天然按序号排序</td></tr>
+          <tr><td>断点续跑</td><td>支持</td><td>已存在且体积大于 1KB 的图片自动跳过，不重复生成</td></tr>
+          <tr><td>失败自动重试</td><td>支持</td><td>检出重复内容时自动重跑该条，无需人工干预</td></tr>
+          <tr><td>一图一页演示文稿</td><td>支持</td><td>生成后校验页数与每页内嵌图片的哈希值，防止错配</td></tr>
+          <tr><td>大批量一次跑完</td><td>不支持</td><td>单次运行有时长上限，超量需分批推进</td></tr>
+          <tr><td>复用历史任务续跑</td><td>不支持</td><td>平台会清理免费档项目，续跑必须新开任务</td></tr>
+        </tbody>
+      </table>
+
+      <p>需要说明的是「断点续跑」这一项的实际价值。它意味着重复执行同一区间是安全的——如果某次运行因为网络或超时而中断，直接重新启动即可，工具会自动跳过已经产出的图片，既节省时间也节省平台额度。</p>
+
+      <h2 id="section-3">三、工作流程</h2>
+
+      <p>整条流程分为四步，从准备描述清单开始，到产出演示文稿结束。前三步是批量出图的主体，第四步是收尾。</p>
+
+      <h3>3.1 第一步：准备设计描述清单</h3>
+
+      <p>工具以 JSON 清单作为输入，每一项包含一个款式名称和一段设计描述。清单可以自行编写，也可以由内置的提示词生成脚本自动产出——该脚本按品类、宝石、金属三个维度做组合，一次可以生成上百条结构规整的珠宝描述。若使用自有清单，只要保持字段结构一致即可。</p>
+
+      <h3>3.2 第二步：核对账号容量</h3>
+
+      <p>免费版账号同时只允许保留三个活跃设计项目。在开始批量任务之前，工具会先读取当前的占用情况，若已接近上限，需要先到平台网页端清理旧项目，或改用付费档账号。这一步是一次性的检查，不占用出图时间。</p>
+
+      <h3>3.3 第三步：批量出图</h3>
+
+      <p>这是整条流程的核心环节。工具的调度原则是「每批新建项目、全程停留在同一页面、不跨任务复用」。执行时按序号区间推进，例如先跑第 1 到第 25 条，完成后接第 26 到第 50 条，依此类推。</p>
+
+      <p>之所以要分批，是因为单次运行存在时长上限，整批一次跑完会在中途被强制终止。以实测速度计算，每张图大约需要一到一分半钟，每批二十五张约耗时二十五到四十分钟，是一个比较稳妥的粒度。</p>
+
+      <p>图片落盘目录与命名规则均已固化，无需额外配置。目录内已存在的图片会被识别并跳过，因此重复执行同一区间是安全的。</p>
+
+      <h3>3.4 第四步：合成演示文稿</h3>
+
+      <p>批量任务结束后，合成脚本会按自然顺序读取目录内的全部图片，一图一页写入演示文稿，版式为白底、图片居中、右下角标注页码。生成完成后脚本会自动校验页数是否与图片数量一致，并逐页比对内嵌图片的哈希值与源文件是否相同，不一致则直接报错，避免出现图页错配的低级问题。</p>
+
+      <h2 id="section-4">四、使用前提</h2>
+
+      <p>工具运行在 Windows 环境下，依赖本机浏览器与两个运行时。下表列出完整的前置要求。</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>项目</th><th>要求</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>操作系统</td><td>Windows</td><td>依赖本机浏览器的调试端口</td></tr>
+          <tr><td>浏览器</td><td>Microsoft Edge</td><td>复用本机已安装的 Edge，无需额外安装 Chrome</td></tr>
+          <tr><td>平台账号</td><td>BLNG 账号</td><td>交付包内账号密码为空，需使用方自行填写一次</td></tr>
+          <tr><td>Python</td><td>3.10 及以上</td><td>执行自动化脚本，需包含网络通信相关依赖</td></tr>
+          <tr><td>Node.js</td><td>18 及以上</td><td>仅合成演示文稿时需要</td></tr>
+          <tr><td>网络</td><td>可直连 BLNG</td><td>若本机启用了系统代理，脚本已内置回环排除配置</td></tr>
+        </tbody>
+      </table>
+
+      <p>关于账号，需要特别说明一点：交付包中的账号与密码字段默认是空白的，不含任何真实凭据。使用方首次运行时填写自己的账号，之后可由本地会话文件维持登录状态，无需重复输入。也可以通过环境变量注入账号密码，这种方式不会在代码文件中留下痕迹，适合多人共用一台机器的场景。</p>
+
+      <h2 id="section-5">五、使用限制与注意事项</h2>
+
+      <p>本节列出使用前必须了解的限制条件。这些不是可以绕过的细节，而是由平台策略与运行环境共同决定的硬约束。</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>限制</th><th>具体表现</th><th>应对方式</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>活跃项目数量上限</td><td>免费版同时最多三个设计项目</td><td>跑批前先清理，或改用付费档账号</td></tr>
+          <tr><td>历史项目会被清理</td><td>免费档项目存放一段时间后消失</td><td>已开跑的任务不要跨天续跑，尽量一次完成</td></tr>
+          <tr><td>单次运行时长上限</td><td>单条命令最长运行约十分钟</td><td>按二十五到五十张为一档分批推进</td></tr>
+          <tr><td>生成速度受限</td><td>每张约一到一分半钟</td><td>按实际时间预算规划批次规模</td></tr>
+          <tr><td>内容重复可能</td><td>偶发产出与前面重复的图</td><td>工具自动检出并重跑，无需人工处理</td></tr>
+        </tbody>
+      </table>
+
+      <p class="note-warn">&nbsp;&nbsp;其中「历史项目会被清理」是最容易踩的一条。免费档的项目并非永久保留，若上午跑了一半、下午再想接着跑，很可能发现原项目已经不在，只能重新开始。因此建议在一次连续的时间段内完成整批任务。</p>
+
+      <p>关于生成速度，需要建立合理的预期。免费版并没有每日总量上限，限制在于并发能力而非产出总量，所以完成两百张以上的任务在技术上是可行的，只是需要相应的时间投入——按每张一分半钟的保守估计，两百五十张大约需要六个小时。这一点在制定计划时应当提前纳入考虑。</p>
+
+      <h2 id="section-6">六、成果输出</h2>
+
+      <p>任务完成后会得到两份成果，均落在预先设定的目录下。</p>
+
+      <p>第一份是图片文件夹，里面是按序号命名的全部设计图，文件名形如 001_项链.png、002_戒指.png。三位补零的编号保证了在文件管理器中按名称排序时顺序正确，即使总数超过一百张也不会错乱。</p>
+
+      <p>第二份是演示文稿，每页一张图，右下角标注页码。这份文件可以直接用于会议展示、客户提案或内部评审，不需要再手工整理。若后续更换或补充了图片，重新执行合成脚本即可覆盖重建。</p>
+
+      <h2 id="section-7">七、包内结构与模块说明</h2>
+
+      <p>交付包共包含十一个文件，按职责分为三层：主文档负责说明整体用法，参考资料沉淀环境配置与历史经验，脚本目录承载全部可执行逻辑。</p>
+
+      <h3>7.1 主文档</h3>
+
+      <p>包内根目录的主文档是整个工具的使用入口，内容涵盖能力边界、四步工作流程、七条关键实现要点，以及全部资源的索引。首次使用建议从这里读起。</p>
+
+      <h3>7.2 参考资料</h3>
+
+      <p>参考资料目录下有两份文档。环境配置文档说明运行环境准备、账号填写方式、首次登录流程与链路自检方法；踩坑记录文档汇总了二十条历史问题与规避方式，涵盖代理干扰、页面元素虚拟化、进程管理、演示文稿引擎路径等容易反复出现的故障点。这份踩坑记录是本工具最有价值的资产之一，遇到异常时优先查阅。</p>
+
+      <h3>7.3 脚本清单</h3>
+
+      <p>脚本目录下的七个脚本各有明确分工，下表按用途排列。</p>
+
+      <table class="tbl">
+        <thead>
+          <tr><th>脚本</th><th>用途</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>浏览器自动化基座</td><td>页面导航、元素取值、截图与状态快照</td><td>供其他脚本调用</td></tr>
+          <tr><td>会话管理</td><td>账号凭据与登录状态维护</td><td>首次使用时需填写账号</td></tr>
+          <tr><td>登录辅助</td><td>处理登录与会话恢复</td><td>被其他脚本引用</td></tr>
+          <tr><td>批量生成器</td><td>单任务批量出图</td><td>核心脚本</td></tr>
+          <tr><td>演示文稿合成</td><td>图片目录转一图一页演示文稿</td><td>含哈希校验</td></tr>
+          <tr><td>提示词生成</td><td>组合式生成珠宝设计描述清单</td><td>可选，可用自有清单替代</td></tr>
+          <tr><td>容量检查</td><td>只读读取当前活跃项目数</td><td>批量前预检</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="section-8">八、常见问题</h2>
+
+      <p>以下是最常被问到的几个问题，按使用顺序排列。</p>
+
+      <p><strong>问：图片保存在哪里？</strong></p>
+      <p>答：保存在预先设定的设计图目录下；演示文稿与图片目录同级。如需变更位置，可以显式指定其他目录。</p>
+
+      <p><strong>问：中途中断了要重新开始吗？</strong></p>
+      <p>答：不需要。重新启动后工具会跳过已经产出的图片，接着上次的进度继续。</p>
+
+      <p><strong>问：同一批任务可以重复执行吗？</strong></p>
+      <p>答：可以。已存在且体积正常的图片会被自动跳过，重复执行不会造成重复产出，也不会额外消耗平台额度。</p>
+
+      <p><strong>问：生成结果会有重复吗？</strong></p>
+      <p>答：偶有发生。工具会检出与已有内容重复的图片并自动重跑该条，无需人工介入。</p>
+
+      <p><strong>问：一次跑多少张比较合适？</strong></p>
+      <p>答：建议每批二十五到五十张。这个区间既能保证在单次运行时长上限内完成，也便于中途检查产出质量。</p>
+
+      <p><strong>问：支持其他操作系统吗？</strong></p>
+      <p>答：当前版本以 Windows 为运行环境。工具依赖本机浏览器的调试端口，跨平台适配需要额外验证。</p>
+
+    </main>
+
+  </section>
+
+</body>
+</html>
