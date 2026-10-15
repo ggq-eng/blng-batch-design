@@ -54,7 +54,7 @@ make_ppt.py ──▶ 一图一页 PPTX（页数 + 内嵌图 MD5 双重校验）
 
 ```
 📦 blng-batch-design
-└── 📁 2026-10-09-10-02-25/          # 完整工作快照
+└── 📁           # 完整工作快照
     ├── 📁 blng-batch-design/        ⭐ 可分发 Skill（交付物）
     │   ├── SKILL.md                    能力边界 + 4 步工作流 + 7 条命门要点
     │   ├── README.md                   使用说明（环境 / 快速开始 / FAQ）
@@ -87,7 +87,7 @@ make_ppt.py ──▶ 一图一页 PPTX（页数 + 内嵌图 MD5 双重校验）
 
 ## 🚀 快速开始（3 分钟版）
 
-完整步骤见 [`blng-batch-design/README.md`](2026-10-09-10-02-25/blng-batch-design/README.md)，这里是最短路径：
+完整步骤见 [`blng-batch-design/README.md`](blng-batch-design/README.md)，这里是最短路径：
 
 ```bash
 # 1. 安装依赖（建议独立 venv）
@@ -120,10 +120,10 @@ python scripts/make_ppt.py --force
 
 | 图集 | 数量 | 说明 |
 |---|---|---|
-| [篮球主题](2026-10-09-10-02-25/blng-agent/outputs/basketball_2026-10-09/) | 8 张 | 2048×2048，MD5 全部唯一，逐张视觉核验 |
-| [中国结](2026-10-09-10-02-25/blng-agent/conversations/chinese_knot_2026-10-09_153316/) | 8 张 | 单对话连续生成，7 分 16 秒完成 |
-| [钻石](2026-10-09-10-02-25/blng-agent/diamond/2026-10-09/) | 3 张 | 批次管线验证（含重试机制实测） |
-| [篮球图片集 PPTX](2026-10-09-10-02-25/blng-agent/篮球图片集/篮球图片集.pptx) | 8 页 | 一图一页，嵌入图 MD5 逐页匹配 |
+| [篮球主题](blng-agent/outputs/basketball_2026-10-09/) | 8 张 | 2048×2048，MD5 全部唯一，逐张视觉核验 |
+| [中国结](blng-agent/conversations/chinese_knot_2026-10-09_153316/) | 8 张 | 单对话连续生成，7 分 16 秒完成 |
+| [钻石](blng-agent/diamond/2026-10-09/) | 3 张 | 批次管线验证（含重试机制实测） |
+| [篮球图片集 PPTX](blng-agent/篮球图片集/篮球图片集.pptx) | 8 页 | 一图一页，嵌入图 MD5 逐页匹配 |
 
 ---
 
@@ -131,16 +131,16 @@ python scripts/make_ppt.py --force
 
 | 文档 | 定位 | 适合谁 |
 |---|---|---|
-| [`BLNG批量出图使用方法.docx`](2026-10-09-10-02-25/BLNG批量出图使用方法.docx) | 极简版（828 字，纯文字） | 只想知道「怎么用」的人 |
-| [`BLNG批量出图Skill使用教程.docx`](2026-10-09-10-02-25/BLNG批量出图Skill使用教程.docx) | 对 WorkBuddy 说什么的教材 | WorkBuddy 用户 |
-| [`BLNG批量出图Skill使用说明.docx`](2026-10-09-10-02-25/BLNG批量出图Skill使用说明.docx) | 标准说明（含表格与参数） | 日常使用者 |
-| [`BLNG批量出图Skill使用说明_详细版.docx`](2026-10-09-10-02-25/BLNG批量出图Skill使用说明_详细版.docx) | 完整版（22KB，全参数） | 深度使用 / 二次开发 |
+| [`BLNG批量出图使用方法.docx`](BLNG批量出图使用方法.docx) | 极简版（828 字，纯文字） | 只想知道「怎么用」的人 |
+| [`BLNG批量出图Skill使用教程.docx`](BLNG批量出图Skill使用教程.docx) | 对 WorkBuddy 说什么的教材 | WorkBuddy 用户 |
+| [`BLNG批量出图Skill使用说明.docx`](BLNG批量出图Skill使用说明.docx) | 标准说明（含表格与参数） | 日常使用者 |
+| [`BLNG批量出图Skill使用说明_详细版.docx`](BLNG批量出图Skill使用说明_详细版.docx) | 完整版（22KB，全参数） | 深度使用 / 二次开发 |
 
 ---
 
 ## 🔑 关键实现要点（踩坑浓缩）
 
-这些是管线的命门，**改动代码前务必理解**（完整 20 条见 [pitfalls.md](2026-10-09-10-02-25/blng-batch-design/references/pitfalls.md)）：
+这些是管线的命门，**改动代码前务必理解**（完整 20 条见 [pitfalls.md](blng-batch-design/references/pitfalls.md)）：
 
 1. **必须走本机 Edge + CDP**，不用托管 Chromium（Chromium 下载在国内经常超时）
 2. **必须排除回环代理**，否则 CDP 端口被劫持报 502
